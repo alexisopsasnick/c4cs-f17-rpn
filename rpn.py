@@ -4,7 +4,9 @@ import operator
 
 ops = {
 	'+': operator.add,
-	'-': operator.suwb
+	'-': operator.sub,
+	'*': operator.mul,
+	'/': operator.truediv,
 }
 
 def calculate(myarg):
@@ -18,6 +20,8 @@ def calculate(myarg):
 			function = ops[token]
 			result = function(arg1, arg2)
 			stack.append(result)
+	if len(stack) != 1:
+		raise TypeError("Too many parameters")
 	return stack.pop()
 
 def main():
