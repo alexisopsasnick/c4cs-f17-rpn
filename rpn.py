@@ -16,7 +16,8 @@ def calculate(myarg):
 	stack = list()
 	for token in myarg.split():
 		try:
-			stack.append(int(token))
+			token = int(token)
+			stack.append(token)
 		except ValueError:
 			arg2 = stack.pop()
 			arg1 = stack.pop()
@@ -25,11 +26,13 @@ def calculate(myarg):
 			stack.append(result)
 	if len(stack) != 1:
 		raise TypeError("Too many parameters")
+	print(stack)
 	return stack.pop()
 
 def main():
 	while True:
-		calculate(input("rpn calc> "))
+		result = calculate(input("rpn calc> "))
+		print("Result: ", result)
 
 if __name__ == '__main__': # Note: that's "underscore underscore n a m e ..."
 	main()
