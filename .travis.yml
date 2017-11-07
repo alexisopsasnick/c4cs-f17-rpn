@@ -3,6 +3,7 @@ python:
   - "3.5"
 install:
   - pip install coveralls
+  - pip install termcolor
 script: 
   - make test
   - coverage run test_rpn.py rpn.py
