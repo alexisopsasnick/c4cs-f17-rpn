@@ -1,5 +1,4 @@
-language: python3
+language: python
 python:
-  - 3.5
-script:
-  - python3 -m unittest
+  - "3.5"
+script: make test
